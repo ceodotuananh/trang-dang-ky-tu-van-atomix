@@ -583,7 +583,7 @@ function copy(text){
 /* ---------- submit ---------- */
 var DB=null,USER=null,UID=null,DL=null;
 /* Dán URL Web App của Google Apps Script (gắn với Sheet "Đăng ký tư vấn Atomix") vào đây */
-var SHEET_URL="";
+var SHEET_URL="https://script.google.com/macros/s/AKfycbwzxhJPPysK4aXuzHl1gFmJ6ZaryxkhipmQAAo2-VAjwgFP6UFVkelMpBt_8rXvVv-XGQ/exec";
 function sheetRow(r){var i=r.info||{},a=r.ans||{},c=r.ch||{};
   return [fmtDate(r.submittedAt)].concat(INFO.map(function(f){return i[f.k]||'';}),[(r.channels||[]).join(', ')],ALLQ.map(function(q){var v=(a[q.id]||'').trim();if(q.tpl&&v===q.tpl.trim())v='';return (c[q.id]?'['+c[q.id]+'] ':'')+v;}),[(r.done||0)+'/'+(r.total||ALLQ.length)]);}
 function sendSheet(rec){
